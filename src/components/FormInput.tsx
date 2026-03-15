@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { View, TextInput, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 type Props = {
   placeholder?: string;
   label?: string;
+=======
+import React from "react";
+import { View, TextInput, Text } from "react-native";
+
+type Props = {
+  placeholder: string;
+>>>>>>> bc98ea39675d8df5edf5512fcc76f5b90e68580e
   value: string;
   onChangeText: (text: string) => void;
   error?: string;
@@ -11,11 +19,15 @@ type Props = {
 
 export default function FormInput({
   placeholder,
+<<<<<<< HEAD
   label,
+=======
+>>>>>>> bc98ea39675d8df5edf5512fcc76f5b90e68580e
   value,
   onChangeText,
   error
 }: Props) {
+<<<<<<< HEAD
 
   const isPassword = placeholder?.toLowerCase().includes("password");
   const [showPassword, setShowPassword] = useState(false);
@@ -92,3 +104,17 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
 });
+=======
+  return (
+    <View style={{ marginBottom: 10 }}>
+      <TextInput
+        placeholder={placeholder}
+        value={value}
+        onChangeText={onChangeText}
+        style={{ borderWidth: 1, padding: 10, borderRadius: 5 }}
+      />
+      {error && <Text style={{ color: "red" }}>{error}</Text>}
+    </View>
+  );
+}
+>>>>>>> bc98ea39675d8df5edf5512fcc76f5b90e68580e

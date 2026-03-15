@@ -5,6 +5,10 @@ import FormInput from "../components/FormInput";
 import { signInSchema } from "../validation/signInSchema";
 
 export default function SignInScreen({ navigation }: any) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc98ea39675d8df5edf5512fcc76f5b90e68580e
   return (
     <Formik
       initialValues={{
@@ -12,6 +16,7 @@ export default function SignInScreen({ navigation }: any) {
         password: ""
       }}
       validationSchema={signInSchema}
+<<<<<<< HEAD
       validateOnChange={true}
       validateOnBlur={true}
       onSubmit={(values, { setSubmitting }) => {
@@ -23,10 +28,16 @@ export default function SignInScreen({ navigation }: any) {
         }, 1500);
       }}
     >
+=======
+      onSubmit={(values) => console.log(values)}
+    >
+
+>>>>>>> bc98ea39675d8df5edf5512fcc76f5b90e68580e
       {({
         handleChange,
         handleSubmit,
         values,
+<<<<<<< HEAD
         errors,
         touched,
         isSubmitting
@@ -53,6 +64,30 @@ export default function SignInScreen({ navigation }: any) {
             title={isSubmitting ? "Loading..." : "Sign In"}
             onPress={handleSubmit}
             disabled={isSubmitting}
+=======
+        errors
+      }) => (
+
+        <View style={{ padding: 20 }}>
+
+          <FormInput
+            placeholder="Email"
+            value={values.email}
+            onChangeText={handleChange("email")}
+            error={errors.email}
+          />
+
+          <FormInput
+            placeholder="Password"
+            value={values.password}
+            onChangeText={handleChange("password")}
+            error={errors.password}
+          />
+
+          <Button
+            title="Sign In"
+            onPress={() => handleSubmit()}
+>>>>>>> bc98ea39675d8df5edf5512fcc76f5b90e68580e
           />
 
           <Button
@@ -66,7 +101,16 @@ export default function SignInScreen({ navigation }: any) {
           />
 
         </View>
+<<<<<<< HEAD
       )}
     </Formik>
   );
 }
+=======
+
+      )}
+
+    </Formik>
+  );
+}
+>>>>>>> bc98ea39675d8df5edf5512fcc76f5b90e68580e

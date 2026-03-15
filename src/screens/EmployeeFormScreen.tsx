@@ -18,6 +18,7 @@ export default function EmployeeFormScreen() {
         validationSchema={employeeSchema}
         validateOnBlur={true}
         validateOnChange={true}
+<<<<<<< HEAD
         onSubmit={(values, { setSubmitting }) => {
           setSubmitting(true);
 
@@ -36,6 +37,13 @@ export default function EmployeeFormScreen() {
           isSubmitting,
           resetForm
         }) => (
+=======
+        onSubmit={(values) => {
+          console.log(values);
+        }}
+      >
+        {({ handleChange, handleSubmit, values, errors, touched }) => (
+>>>>>>> bc98ea39675d8df5edf5512fcc76f5b90e68580e
           <>
             <FormInput
               label="Full Name"
@@ -72,6 +80,7 @@ export default function EmployeeFormScreen() {
               error={touched.department ? errors.department : ""}
             />
 
+<<<<<<< HEAD
             <Button
               title={isSubmitting ? "Submitting..." : "Submit"}
               onPress={handleSubmit}
@@ -82,6 +91,9 @@ export default function EmployeeFormScreen() {
               title="Reset"
               onPress={() => resetForm()}
             />
+=======
+            <Button title="Submit" onPress={() => handleSubmit()} />
+>>>>>>> bc98ea39675d8df5edf5512fcc76f5b90e68580e
           </>
         )}
       </Formik>
@@ -93,4 +105,8 @@ const styles = StyleSheet.create({
   container: {
     padding: 20
   }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> bc98ea39675d8df5edf5512fcc76f5b90e68580e
