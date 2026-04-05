@@ -1,28 +1,54 @@
 import React from "react";
-import { View, TextInput, Text } from "react-native";
+import { View, Text, TextInput, StyleSheet } from "react-native";
 
 type Props = {
-  placeholder: string;
+  label: string;
   value: string;
   onChangeText: (text: string) => void;
   error?: string;
+  secureTextEntry?: boolean;
 };
 
 export default function FormInput({
-  placeholder,
+  label,
   value,
   onChangeText,
-  error
+  error,
+  secureTextEntry
 }: Props) {
   return (
-    <View style={{ marginBottom: 10 }}>
+    <View style={styles.container}>
+      <Text style={styles.label}>{label}</Text>
+
       <TextInput
-        placeholder={placeholder}
+        style={styles.input}
+        placeholder={label}
         value={value}
         onChangeText={onChangeText}
-        style={{ borderWidth: 1, padding: 10, borderRadius: 5 }}
+        secureTextEntry={secureTextEntry}
       />
-      {error && <Text style={{ color: "red" }}>{error}</Text>}
+
+      {error ? <Text style={styles.error}>{error}</Text> : null}
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginBottom: 15
+  },
+  label: {
+    fontSize: 16,
+    marginBottom: 5
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    padding: 10,
+    borderRadius: 6
+  },
+  error: {
+    color: "red",
+    marginTop: 5
+  }
+});
